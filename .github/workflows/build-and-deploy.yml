@@ -166,11 +166,11 @@ jobs:
         uses: cypress-io/github-action@v2
         if: ${{ env.GITHUB_REF_SLUG != 'master' }}
         env:
-          CYPRESS_BASE_URL: https://play.${{ env.GITHUB_REF_SLUG }}.workadventure.test.thecodingmachine.com
+          CYPRESS_BASE_URL: http://play.${{ env.GITHUB_REF_SLUG }}.workadventure.test.thecodingmachine.com
         with:
           env: host=play.${{ env.GITHUB_REF_SLUG }}.workadventure.test.thecodingmachine.com,port=80
           spec: cypress/integration/spec.js
-          wait-on: https://play.${{ env.GITHUB_REF_SLUG }}.workadventure.test.thecodingmachine.com
+          wait-on: http://play.${{ env.GITHUB_REF_SLUG }}.workadventure.test.thecodingmachine.com
           working-directory: e2e
 
       - name: Run Cypress tests in prod
